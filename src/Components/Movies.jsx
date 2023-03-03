@@ -61,9 +61,9 @@ function Movies({ moviesList, title }) {
   return (
     <div className="w-full py-3">
       <div className="flex justify-between items-center">
-       <h1 className="font-bold text-2xl text-slate-800">{title}</h1>
+       { title !== "Search" && <h1 className="font-bold text-2xl text-slate-800">{title}</h1>}
       {
-        title !== "search-result" && (
+        title !== "Search" && (
           <Pagination 
             handlePrev={handlePrev}
              handleNext={handleNext}

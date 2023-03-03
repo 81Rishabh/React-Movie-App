@@ -73,7 +73,7 @@ function SearchResult() {
             <h1 className="text-2xl text-slate-700 font-light">No Search Results Found</h1>
          </div>
       )}
-      {searchResults && <Movies moviesList={searchResults} title="search-result" />}
+      {searchResults && <Movies moviesList={searchResults} title="Search" />}
     </div>
   );
 }
