@@ -50,8 +50,7 @@ function Movies({ moviesList, title }) {
     }
   }
 
-  // pagination login
-  
+
   // getting indexs
   const indexOfLastMember = currentPage * MemberPerPage;
   const indexOfFirstMember = indexOfLastMember - MemberPerPage;
@@ -63,11 +62,15 @@ function Movies({ moviesList, title }) {
     <div className="w-full py-3">
       <div className="flex justify-between items-center">
        <h1 className="font-bold text-2xl text-slate-800">{title}</h1>
-       <Pagination 
-         handlePrev={handlePrev}
-         handleNext={handleNext}
-         page={page}
-       />
+      {
+        title !== "search-result" && (
+          <Pagination 
+            handlePrev={handlePrev}
+             handleNext={handleNext}
+             page={page}
+           />
+        )
+      } 
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 grid-flow-row mt-4">
         {(loading || searchLoading) &&
